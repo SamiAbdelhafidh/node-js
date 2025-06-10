@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
   }
   else if (req.url == '/about') {
     res.statusCode=200
-    res.write("<h1>Welcome to the about page</h1>")
+    res.write("<h1>Welcome to the about page </h1>")
   }
   else if (req.url == '/contact') {
     res.statusCode=404
