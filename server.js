@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
 
   if (req.url == '/home') {
     res.statusCode=200
-    res.write("<h1>Welcome to the home page</h1>")
+    res.write("<h1>Welcome to the home page </h1>")
   }
   else if (req.url == '/about') {
     res.statusCode=200
