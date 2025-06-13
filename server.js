@@ -1,32 +1,16 @@
 
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-  
-  res.setHeader('Content-Type', 'text/html');
-  res.write("Sami benAbdelhafidh\n ");
+const app = express();
 
-  if (req.url == '/home') {
-    res.statusCode=200
-    res.write("<h1>Welcome to the home page </h1>")
-  }
-  else if (req.url == '/about') {
-    res.statusCode=200
-    res.write("<h1>Welcome to the about page </h1>")
-  }
-  else if (req.url == '/contact') {
-    res.statusCode=404
-    res.write("<h1>Welcome to the contact page</h1>")
-  }
-  else {
-    res.statusCode = 404
-    res.write("<h1>404 Not Found</h1>")
-  }
-  
-  res.end("done");
-
+app.use ((req, res,next) => {
+  console.log('welcome from home');
+  next();
 
 });
-server.listen(5000, () => {
-  console.log("Server is running on port 5000");
+app.use((req,res) => {
+  console.log('welcome from about');
 });
+
+
+app.listen(3000,()=>console.log('Server is running on port 3000'));
