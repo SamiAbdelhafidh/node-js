@@ -9,7 +9,7 @@ app.use ((req, res,next) => {
 
 });
 app.use((req,res) => {
-  console.log('welcome from about');
+  console.log('welcome from about ');
 });
 
 
