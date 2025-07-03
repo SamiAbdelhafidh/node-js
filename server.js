@@ -1,16 +1,18 @@
 
-const express = require('express');
+const express = require('express')
 
-const app = express();
+const app = express()
 
-app.use ((req, res,next) => {
-  console.log('welcome from home');
-  next();
+app.get ('/' ,(req, res,next) => {
+    res.send('Hello World')
 
-});
-app.use((req,res) => {
-  console.log('welcome from about ');
-});
+})
+app.get ('/about' ,(req, res,next) => {
+    res.send('About Us')
+})
+app.get ('/contact' ,(req, res,next) => {
+    res.send('Contact Us')
+})
 
 
-app.listen(3000,()=>console.log('Server is running on port 3000'));
+app.listen(5000,()=>console.log('Server is running on port 5000'))
